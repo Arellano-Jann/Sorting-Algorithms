@@ -3,8 +3,8 @@ CDIR = src
 ODIR = objs
 CPPFLAGS = -std=c++11 -g# flags
 DEPS = $(wildcard $(HDIR)/*.h)
-SOURCE = $(wildcard $(CDIR)/*.cpp)# essentially equals everything in CDIR that has ending of .cpp
-OBJS = $(patsubst $(CDIR)/%.cpp, $(ODIR)/%.o, $(SOURCE))# replaces everything in source ending in arg1 with arg2
+OBJ_FILES = main.o Grapher.o NumberGenerator.o# put all dependencies for driver here
+OBJS = $(patsubst %.o, $(ODIR)/%.o, $(OBJ_FILES))# replaces everything in source ending in arg1 with arg2
 vpath %.h headers# basically a search function
 vpath %.cpp src
 vpath %.o objs
