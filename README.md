@@ -32,7 +32,7 @@ Note: You can only use (i.e., copy) code from the book and slides. You need to d
 Deliverables:
 -	Source code for each of your classes
 -	A main driver that tests the classes with randomly generated data.
--	The data input files (there should be 6 of them – sorted and unsorted data for each input size)
+-	~~The data input files (there should be 6 of them – sorted and unsorted data for each input size)~~
 - Test output of your algorithms (with a table of each run and their averages for each of the metrics listed above)
   -	Tables
     - Include data for individual runs
