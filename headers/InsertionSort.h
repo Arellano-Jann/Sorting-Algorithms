@@ -1,4 +1,5 @@
 #pragma once
+#define INSERTIONSORT_H
 
 template <typename T>
 class InsertionSort{
@@ -7,10 +8,11 @@ private:
 	int size;
 	int swaps;
 	int comparisons;
-	sort();
+	void sort();
+	void swap(int currentIndex, int swapIndex);
 public:
 	InsertionSort(T *arr, int size);
 	~InsertionSort();
 };
 
-#include "InsertionSort.cpp"
+#include "../src/InsertionSort.cpp"

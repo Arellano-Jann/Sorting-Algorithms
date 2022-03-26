@@ -1,4 +1,5 @@
 #pragma once
+#define BUBBLESORT_H
 
 template <typename T>
 class BubbleSort{
@@ -7,10 +8,17 @@ private:
 	int size;
 	int swaps;
 	int comparisons;
-	sort();
+	int numRunTime;
+	void sort();
+	void swap(int currentIndex, int swapIndex);
 public:
 	BubbleSort(T *arr, int size);
+	int* getArray() const;
+	int getSize() const;
+	int getSwaps() const;
+	int getComparisons() const;
+	int getNumRunTime() const;
 	~BubbleSort();
 };
 
-#include "BubbleSort.cpp"
+#include "../src/BubbleSort.cpp"

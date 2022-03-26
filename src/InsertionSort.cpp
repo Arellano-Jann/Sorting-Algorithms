@@ -1,5 +1,5 @@
 template <typename T>
-InsertionSort::InsertionSort(T *arr, int size)
+InsertionSort<T>::InsertionSort(T *arr, int size)
 	: arr(arr)
 	, size(size)
 	, swaps(0)
@@ -8,7 +8,7 @@ InsertionSort::InsertionSort(T *arr, int size)
 }
 
 template <typename T>
-void InsertionSort::sort(){
+void InsertionSort<T>::sort(){
 	for (int current = 0; i < size-1; current++){
 		for (int comparison = size-2; comparison >= 0; comparison--){
 			comparisons++;
@@ -20,7 +20,7 @@ void InsertionSort::sort(){
 }
 
 template <typename T>
-void InsertionSort::swap(currentIndex, swapIndex){
+void InsertionSort<T>::swap(int currentIndex, int swapIndex){
 	T temp = arr[currentIndex];
 	arr[currentIndex] = arr[swapIndex];
 	arr[swapIndex] = temp;
@@ -28,6 +28,6 @@ void InsertionSort::swap(currentIndex, swapIndex){
 }
 
 template <typename T>
-InsertionSort::~InsertionSort()
+InsertionSort<T>::~InsertionSort()
 {
 }

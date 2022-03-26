@@ -1,4 +1,5 @@
 #pragma once
+#define TABLEMAKER_H
 
 class TableMaker
 {
@@ -7,6 +8,7 @@ private:
 	int avgRunTime;
 	int avgComparisons;
 	int avgSwaps;
+	int totalRows;
 
 	// use avgRunTime to make a graph
 	// sort between sorted and unsorted graphs w algos

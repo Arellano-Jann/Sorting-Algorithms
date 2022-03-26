@@ -1,4 +1,7 @@
 #pragma once
+#define DATAANALYZER_H
+
+// #include <SortingAlgorithms.h>
 
 class DataAnalyzer
 {
@@ -7,12 +10,10 @@ private:
 	int numRunTime;
 	int numComparisons;
 	int numSwaps;
-	int totalRunTime;
-	int totalComparisons;
-	int totalSwaps;
 
 public:
 	DataAnalyzer(/* args */);
+	// DataAnalyzer(SortingAlgorithms *algo);
 	~DataAnalyzer();
 };
 

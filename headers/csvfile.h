@@ -1,4 +1,5 @@
 #pragma once
+#define CSVFILE_H
 
 #include <iostream>
 #include <fstream>
