@@ -12,8 +12,8 @@ void BubbleSort::sort(){
 	for (int i = 0; i < size-1; i++){
 		int index = 0;
 		for (index; index < size-1; index++){
+			comparisons++;
 			if (arr[index] > arr[index+1]){
-				comparisons++;
 				swap(index, index+1);
 			}
 		}

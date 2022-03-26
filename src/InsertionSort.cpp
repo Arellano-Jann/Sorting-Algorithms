@@ -11,8 +11,8 @@ template <typename T>
 void InsertionSort::sort(){
 	for (int current = 0; i < size-1; current++){
 		for (int comparison = size-2; comparison >= 0; comparison--){
+			comparisons++;
 			if (arr[current] > arr[comparison]){
-				comparisons++;
 				swap(current, comparison+1);
 			}
 		}
