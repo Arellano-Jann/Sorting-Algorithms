@@ -7,7 +7,12 @@
 int main(){
 	int size = 10;
 	NumberGenerator *n = new NumberGenerator(size);
+	std::cout << "Array: " << n->getArray() << std::endl;
+	n->getArrayContents();
 	BubbleSort<int> *b = new BubbleSort<int>(n->getArray(), n->getSize());
+	std::cout << "Array: " << n->getArray() << std::endl;
+	n->getArrayContents();
+	std::cout << "Array: " << b->getArray() << std::endl;
 	// DataAnalyzer *d = new DataAnalyzer(b);
 	std::cout << "Number of swaps: " << b->getSwaps() << std::endl;
 	std::cout << "Number of comparisons: " << b->getComparisons() << std::endl;
