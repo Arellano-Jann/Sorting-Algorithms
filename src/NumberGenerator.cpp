@@ -6,13 +6,16 @@
 // {
 // }
 
+int NumberGenerator::seed = 0;
+
 NumberGenerator::NumberGenerator(int size)
 	: size(size)
 	{ 
 	arr = new int[size]; 
-	  for (int i = 0; i < size; i++){
+	for (int i = 0; i < size; i++){
+		srand(i+size+seed);
 	  	arr[i] = rand() % 1000000;
-	  }
+		}
 	}
 
 int* NumberGenerator::getArray() const{ return arr; } // does this work?
@@ -25,6 +28,11 @@ void NumberGenerator::getArrayContents() const{
  }
 
 int NumberGenerator::getSize() const{ return size; }
+
+int NumberGenerator::changeSeed(){
+	seed++;
+	return seed;
+}
 
 NumberGenerator::~NumberGenerator(){
 	delete[] arr; }
