@@ -1,0 +1,1 @@
+// might use this as an interface for sorting algorithms
