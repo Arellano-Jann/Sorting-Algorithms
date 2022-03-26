@@ -16,5 +16,6 @@ public:
 	void getArrayContents() const;
 	int getSize() const;
 	int changeSeed();
+	int changeSeed(int newSeed);
 	~NumberGenerator();
 };

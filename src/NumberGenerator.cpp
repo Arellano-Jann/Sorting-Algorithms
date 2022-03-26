@@ -34,5 +34,10 @@ int NumberGenerator::changeSeed(){
 	return seed;
 }
 
+int NumberGenerator::changeSeed(int newSeed){
+	seed = newSeed;
+	return seed;
+}
+
 NumberGenerator::~NumberGenerator(){
 	delete[] arr; }
