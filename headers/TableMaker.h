@@ -9,7 +9,7 @@ class TableMaker
 {
 private:
 	// generate table and graph based on these values
-	int avgComparisons, avgSwaps, rows, columns;
+	int avgComparisons, avgSwaps, rows, columns, totalRows, totalColumns;
 	double avgRunTime;
 	// std::string** arr; // hopefully this works
 	// if this doesn't work, convert back to int and just add headers in the csvfile

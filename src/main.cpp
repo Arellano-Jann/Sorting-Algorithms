@@ -25,13 +25,13 @@ int main(){
 	std::cout << "Number of comparisons: " << d->getComparisons() << std::endl;
 	std::cout << "Runtime: " << d->getRunTime() << std::endl;
 	
-	TableMaker *t = new TableMaker("output.csv", 12, 3);
+	TableMaker *t = new TableMaker("output.csv", 3, 3);
 	// t->setupTableHeaders();
 	// for (int i = 0; i < 10; i++){
+		t->insertRow(d);
 		t->insertRow(d);t->insertRow(d);
-		t->insertRow(d);t->insertRow(d);
-		t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
-		t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
+		// t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
+		// t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
 	// }
 	t->calculateAverages();
 	t->outputCSV();
