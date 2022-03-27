@@ -14,16 +14,18 @@ private:
 	virtual void sort() = 0;
 public:
 	SortingAlgorithms(T *arr, int size);
+	void swap(int currentIndex, int swapIndex);
+	~SortingAlgorithms();
+
 	int* getArray() const;
 	int getSize() const;
-	void swap(int currentIndex, int swapIndex);
 	int getSwaps() const;
 	int getComparisons() const;
 	double getRunTime() const;
+
 	void incrementComparisons();
 	void incrementSwaps();
 	void setRunTime(double newRunTime);
-	~SortingAlgorithms();
 };
 
 #include "../src/SortingAlgorithms.cpp"
