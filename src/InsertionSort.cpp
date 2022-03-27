@@ -1,46 +1,27 @@
 template <typename T>
 InsertionSort<T>::InsertionSort(T *arr, int size)
-	: arr(arr)
-	, size(size)
-	, swaps(0)
-	, comparisons(0)
-{ sort();
+	: SortingAlgorithms<T>(arr, size)
+{ 
+	InsertionSort<T>::arr = SortingAlgorithms<T>::getArray();
+	InsertionSort<T>::size = SortingAlgorithms<T>::getSize();
+	sort();
 }
 
 template <typename T>
 void InsertionSort<T>::sort(){
+	std::clock_t start = std::clock();
 	for (int current = 0; current < size-1; current++){
 		for (int comparison = size-2; comparison >= 0; comparison--){
-			comparisons++;
+			SortingAlgorithms<T>::incrementComparisons();
 			if (arr[current] > arr[comparison]){
-				swap(current, comparison+1);
+				SortingAlgorithms<T>::swap(current, comparison+1);
+				SortingAlgorithms<T>::incrementSwaps();
 			}
 		}
 	}
+	std::clock_t end = std::clock();
+	SortingAlgorithms<T>::setRunTime(1000.0 * (end-start) / CLOCKS_PER_SEC);
 }
-
-template <typename T>
-void InsertionSort<T>::swap(int currentIndex, int swapIndex){
-	T temp = arr[currentIndex];
-	arr[currentIndex] = arr[swapIndex];
-	arr[swapIndex] = temp;
-	swaps++;
-}
-
-template <typename T>
-int* InsertionSort<T>::getArray() const { return arr; } // does this work?
-
-template <typename T>
-int InsertionSort<T>::getSize() const { return size; }
-
-template <typename T>
-int InsertionSort<T>::getSwaps() const { return swaps; }
-
-template <typename T>
-int InsertionSort<T>::getComparisons() const { return comparisons; }
-
-template <typename T>
-int InsertionSort<T>::getNumRunTime() const { return numRunTime; }
 
 template <typename T>
 InsertionSort<T>::~InsertionSort()
