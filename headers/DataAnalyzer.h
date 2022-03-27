@@ -1,7 +1,7 @@
 #pragma once
 #define DATAANALYZER_H
 
-// #include <SortingAlgorithms.h>
+#include "SortingAlgorithms.h"
 
 class DataAnalyzer
 {
