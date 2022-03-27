@@ -79,7 +79,7 @@ void TableMaker::outputCSV(){
 	std::cout << rows << std::endl;
 	try
     {
-        Csvfile csv(filename  ); // make this take a filename in
+        Csvfile csv(filename);
 		csv << "Run Time" << "Comparisons" << "Swaps" << endrow;
         for (int i = 0; i < totalRows; i++)
 		{
