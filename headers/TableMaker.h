@@ -8,7 +8,8 @@ class TableMaker
 {
 private:
 	// generate table and graph based on these values
-	int avgRunTime, avgComparisons, avgSwaps, rows, columns, ,
+	int avgComparisons, avgSwaps, rows, columns;
+	double avgRunTime;
 
 	// use avgRunTime to make a graph
 	// sort between sorted and unsorted graphs w algos
@@ -16,6 +17,7 @@ private:
 public:
 	TableMaker(int rows, int columns);
 	bool insertRow(DataAnalyzer<T> *data);
+	void calculateAverages();
 	~TableMaker();
 };
 

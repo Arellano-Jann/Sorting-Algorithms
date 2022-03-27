@@ -6,7 +6,7 @@ DataAnalyzer<T>::DataAnalyzer(SortingAlgorithms<T> *algo){
 }
 
 template <typename T>
-int DataAnalyzer<T>::getRunTime(){ return runTime; }
+double DataAnalyzer<T>::getRunTime(){ return runTime; }
 
 template <typename T>
 int DataAnalyzer<T>::getComparisons(){ return numComparisons; }
