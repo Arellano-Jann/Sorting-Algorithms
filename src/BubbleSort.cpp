@@ -9,6 +9,8 @@ BubbleSort<T>::BubbleSort(T *arr, int size)
 
 template <typename T>
 void BubbleSort<T>::sort(){
+	// const std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+	
 	std::clock_t start = std::clock();
 	for (int i = 0; i < size-1; i++){
 		int index = 0;
@@ -23,6 +25,12 @@ void BubbleSort<T>::sort(){
 	}
 	std::clock_t end = std::clock();
 	SortingAlgorithms<T>::setRunTime(1000.0 * (end-start) / CLOCKS_PER_SEC);
+
+	// const std::chrono::time_point<std::chrono::high_resolution_clock> end = std::chrono::high_resolution_clock::now();
+	// SortingAlgorithms<T>::setRunTime(std::chrono::duration<double, std::milli>(end-start).count());
+	//Alternative way to get time using duration_cast
+	// SortingAlgorithms<T>::setRunTime(std::chrono::duration_cast<std::chrono::nanoseconds>(end-start).count());
+
 }
 
 

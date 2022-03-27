@@ -1,6 +1,7 @@
 #pragma once
 #define SORTINGALGORITHMS_H
 #include <ctime>
+#include <chrono>
 
 template <typename T>
 class SortingAlgorithms {
@@ -9,7 +10,7 @@ private:
 	int size;
 	int swaps;
 	int comparisons;
-	int runTime;
+	double runTime;
 	virtual void sort() = 0;
 public:
 	SortingAlgorithms(T *arr, int size);
@@ -18,10 +19,10 @@ public:
 	void swap(int currentIndex, int swapIndex);
 	int getSwaps() const;
 	int getComparisons() const;
-	int getRunTime() const;
+	double getRunTime() const;
 	void incrementComparisons();
 	void incrementSwaps();
-	void setRunTime(int newRunTime);
+	void setRunTime(double newRunTime);
 	~SortingAlgorithms();
 };
 

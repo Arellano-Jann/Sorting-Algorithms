@@ -1,4 +1,3 @@
-
 template <typename T>
 SortingAlgorithms<T>::SortingAlgorithms(T *arr, int size)
 	: arr(arr)
@@ -29,7 +28,7 @@ template <typename T>
 int SortingAlgorithms<T>::getComparisons() const { return comparisons; }
 
 template <typename T>
-int SortingAlgorithms<T>::getRunTime() const { return runTime; }
+double SortingAlgorithms<T>::getRunTime() const { return runTime; }
 
 template <typename T>
 void SortingAlgorithms<T>::incrementComparisons(){ comparisons++; }
@@ -38,7 +37,7 @@ template <typename T>
 void SortingAlgorithms<T>::incrementSwaps(){ swaps++; }
 
 template <typename T>
-void SortingAlgorithms<T>::setRunTime(int newRunTime){ runTime = newRunTime; }
+void SortingAlgorithms<T>::setRunTime(double newRunTime){ runTime = newRunTime; }
 
 
 template <typename T>
