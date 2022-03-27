@@ -79,28 +79,41 @@ int main(){
 	// }	
 
 	// Brute force this. then automate it.
-	NumberGenerator *testGen = new NumberGenerator(100);
-	BubbleSort<int> *bubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-	InsertionSort<int> *insertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
-	DataAnalyzer *dbubble = new DataAnalyzer(bubble);
-	DataAnalyzer *dinsertion = new DataAnalyzer(insertion);
-	
-	TableMaker *t = new TableMaker("output.csv", 3, 3);
-	t->setupCSVHeaders("Bubble Sort");
-	t->insertRow(dbubble);
-	t->insertRow(dinsertion);t->insertRow(dinsertion);
-	t->calculateAverages();
+	TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
+	TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
+	ub1000->setupCSVHeaders("Bubble Sort");
+	for (int i = 0; i < 10; i++){
+		NumberGenerator *testGen = new NumberGenerator(100);
+		BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+		DataAnalyzer *dububble = new DataAnalyzer(ububble);
+		ub1000->insertRow(dububble);
+		BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+		DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
+		testGen->changeSeed();
+
+		delete testGen;
+		delete ububble;
+		delete sbubble;
+		delete duBubble;
+		delete dsBubble;
+	}
+	ub1000->calculateAverages();
+
 	// t->outputCSV();
 	
+	// InsertionSort<int> *insertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
+	// DataAnalyzer *dinsertion = new DataAnalyzer(insertion);
+	// t->insertRow(dinsertion);t->insertRow(dinsertion);
+	
 	// Test if number gen will be copied and changed etc
-	NumberGenerator gen1 = NumberGenerator(10);
-	int uarr1[] = gen1.getArray();
-	BubbleSort<int> *testBubble1 = new BubbleSort<int>(gen1.getArray(), gen1.getSize());
-	int sarr1[] = gen1.getArray();
+	// NumberGenerator gen1 = NumberGenerator(10);
+	// int uarr1[] = gen1.getArray();
+	// BubbleSort<int> *testBubble1 = new BubbleSort<int>(gen1.getArray(), gen1.getSize());
+	// int sarr1[] = gen1.getArray();
 
-	NumberGenerator gen2 = NumberGenerator(10);
-	int uarr2[] = gen2.getArray();
-	BubbleSort<int> *testBubble2 = new BubbleSort<int>(uarr2, uarr2.size());
+	// NumberGenerator gen2 = NumberGenerator(10);
+	// int uarr2[] = gen2.getArray();
+	// BubbleSort<int> *testBubble2 = new BubbleSort<int>(uarr2, uarr2.size());
 
 
 	std::cout << "CSV File Outputted." << std::endl;
