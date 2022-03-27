@@ -45,7 +45,22 @@ void TableMaker::calculateAverages(){
 }
 
 void TableMaker::outputCSV(){
-	
+	try
+    {
+        Csvfile csv("MyTable.csv");
+        for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < columns; j++)
+			{
+				csv << arr[i][j]; // csv << arr[i][j] << ",";
+			}
+			csv << endrow;
+		}
+    }
+    catch (const std::exception &ex)
+    {
+        std::cout << "Exception was thrown: " << ex.what() << std::endl;
+    }
 }
 
 TableMaker::~TableMaker()
