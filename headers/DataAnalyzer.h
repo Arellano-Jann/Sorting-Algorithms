@@ -14,9 +14,9 @@ public:
 	// DataAnalyzer(/* args */);
 	template <typename T>
 	DataAnalyzer(const SortingAlgorithms<T> *algo){
-	runTime = algo->getRunTime();
-	numComparisons = algo->getComparisons();
-	numSwaps = algo->getSwaps();
+		runTime = algo->getRunTime();
+		numComparisons = algo->getComparisons();
+		numSwaps = algo->getSwaps();
 	}
 
 	double getRunTime();

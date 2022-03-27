@@ -91,6 +91,18 @@ int main(){
 	t->insertRow(dinsertion);t->insertRow(dinsertion);
 	t->calculateAverages();
 	// t->outputCSV();
+	
+	// Test if number gen will be copied and changed etc
+	NumberGenerator gen1 = NumberGenerator(10);
+	int uarr1[] = gen1.getArray();
+	BubbleSort<int> *testBubble1 = new BubbleSort<int>(gen1.getArray(), gen1.getSize());
+	int sarr1[] = gen1.getArray();
+
+	NumberGenerator gen2 = NumberGenerator(10);
+	int uarr2[] = gen2.getArray();
+	BubbleSort<int> *testBubble2 = new BubbleSort<int>(uarr2, uarr2.size());
+
+
 	std::cout << "CSV File Outputted." << std::endl;
 	return 0;
 }
