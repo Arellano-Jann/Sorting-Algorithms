@@ -33,7 +33,10 @@ public:
     Csvfile& operator << (const char * val);
     Csvfile& operator << (const std::string & val);
     template<typename T>
-    Csvfile& operator << (const T& val);
+    Csvfile& operator << (const T& val){
+	file << val << separator;
+	return *this;
+    }
 };
 
 

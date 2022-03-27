@@ -22,8 +22,8 @@ Csvfile& Csvfile::operator << (const std::string & val){
 	return *this;
 }
 
-template<typename T>
-Csvfile& Csvfile::operator << (const T& val){
-	file << val << separator;
-	return *this;
-}
+// template<typename T>
+// Csvfile& Csvfile::operator << (const T& val){
+// 	file << val << separator;
+// 	return *this;
+// }
