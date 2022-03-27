@@ -1,5 +1,6 @@
 #include "../headers/BubbleSort.h"
 #include "../headers/InsertionSort.h"
+#include "../headers/MergeSort.h"
 #include "../headers/DataAnalyzer.h"
 #include "../headers/NumberGenerator.h"
 #include "../headers/TableMaker.h"
@@ -79,12 +80,15 @@ int main(){
 
 
 	NumberGenerator *testGen = new NumberGenerator(100);
-	BubbleSort<int> *test = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-	DataAnalyzer *d = new DataAnalyzer(test);
+	BubbleSort<int> *bubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+	InsertionSort<int> *insertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
+	DataAnalyzer *dbubble = new DataAnalyzer(bubble);
+	DataAnalyzer *dinsertion = new DataAnalyzer(insertion);
 	
 	TableMaker *t = new TableMaker("output.csv", 3, 3);
-	t->insertRow(d);
-	t->insertRow(d);t->insertRow(d);
+	t->setupCSV();
+	t->insertRow(dbubble);
+	t->insertRow(dinsertion);t->insertRow(dinsertion);
 	t->calculateAverages();
 	// t->outputCSV();
 	std::cout << "CSV File Outputted." << std::endl;

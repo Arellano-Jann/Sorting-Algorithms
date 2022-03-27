@@ -10,8 +10,7 @@ class Csvfile;
 inline static Csvfile& endrow(Csvfile& file);
 inline static Csvfile& flush(Csvfile& file);
 
-class Csvfile
-{
+class Csvfile{
     std::ofstream fs_;
     bool is_first_;
     const std::string separator_;
