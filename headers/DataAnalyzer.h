@@ -3,24 +3,29 @@
 
 #include "SortingAlgorithms.h"
 
+template <typename T>
 class DataAnalyzer
 {
 private:
 	// generates data for one line
-	int numRunTime;
+	int runTime;
 	int numComparisons;
 	int numSwaps;
 
 public:
-	DataAnalyzer(/* args */);
-	// DataAnalyzer(SortingAlgorithms *algo);
+	// DataAnalyzer(/* args */);
+	DataAnalyzer(SortingAlgorithms<T> *algo);
 	~DataAnalyzer();
 };
 
-DataAnalyzer::DataAnalyzer(/* args */)
-{
+template <typename T>
+DataAnalyzer<T>::DataAnalyzer(SortingAlgorithms<T> *algo){
+	runTime = algo->getRunTime();
+	numComparisons = algo->getComparisons();
+	numSwaps = algo->getSwaps();
 }
 
-DataAnalyzer::~DataAnalyzer()
+template <typename T>
+DataAnalyzer<T>::~DataAnalyzer()
 {
 }

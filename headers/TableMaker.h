@@ -1,6 +1,8 @@
 #pragma once
 #define TABLEMAKER_H
 
+#include "DataAnalyzer.h"
+
 class TableMaker
 {
 private:
