@@ -21,10 +21,9 @@ private:
 
 public:
 	TableMaker(std::string filename, int rows, int columns);
+	bool insertRow(DataAnalyzer *data);
 	void calculateAverages();
 	void setupTableHeaders();
 	void outputCSV();
 	~TableMaker();
-
-	bool insertRow(DataAnalyzer *data);
 };

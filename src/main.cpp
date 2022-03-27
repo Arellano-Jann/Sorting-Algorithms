@@ -19,6 +19,8 @@ int main(){
 	std::cout << "Number of comparisons: " << b->getComparisons() << std::endl;
 	std::cout << "Runtime: " << b->getRunTime() << std::endl;
 
+	
+
 	NumberGenerator *one = new NumberGenerator(size);
 	// std::cout << "Array: " << one->getArray() << std::endl;
 	// one->getArrayContents();
