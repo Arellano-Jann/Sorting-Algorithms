@@ -1,11 +1,11 @@
-template <typename T>
-TableMaker<T>::TableMaker(int rows, int columns)
+#include "../headers/TableMaker.h"
+
+TableMaker::TableMaker(int rows, int columns)
 	: rows(rows), columns(columns)
 	, avgRunTime(0), avgComparisons(0), avgSwaps(0)
 {}
 
-template <typename T>
-bool TableMaker<T>::insertRow(DataAnalyzer<T> *data){
+bool TableMaker::insertRow(DataAnalyzer *data){
 	// check if rows are full
 	double runTime = data->getRunTime();
 	int comparisons = data->getComparisons();
@@ -15,18 +15,16 @@ bool TableMaker<T>::insertRow(DataAnalyzer<T> *data){
 	avgComparisons += comparisons;
 	avgSwaps += swaps;
 
-	
+
 
 	return true;
 }
 
-template <typename T>
-void TableMaker<T>::calculateAverages(){
+void TableMaker::calculateAverages(){
 	avgRunTime /= rows;
 	avgComparisons /= rows;
 	avgSwaps /= rows;
 }
 
-template <typename T>
-TableMaker<T>::~TableMaker()
+TableMaker::~TableMaker()
 {}

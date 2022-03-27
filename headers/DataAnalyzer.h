@@ -3,7 +3,6 @@
 
 #include "SortingAlgorithms.h"
 
-template <typename T>
 class DataAnalyzer
 {
 private:
@@ -13,7 +12,9 @@ private:
 
 public:
 	// DataAnalyzer(/* args */);
+	template <typename T>
 	DataAnalyzer(SortingAlgorithms<T> *algo);
+	
 	double getRunTime();
 	int getComparisons();
 	int getSwaps();

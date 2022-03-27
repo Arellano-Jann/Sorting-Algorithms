@@ -1,21 +1,18 @@
+#include "../headers/DataAnalyzer.h"
+
 template <typename T>
-DataAnalyzer<T>::DataAnalyzer(SortingAlgorithms<T> *algo){
+DataAnalyzer::DataAnalyzer(SortingAlgorithms<T> *algo){
 	runTime = algo->getRunTime();
 	numComparisons = algo->getComparisons();
 	numSwaps = algo->getSwaps();
 }
 
-template <typename T>
-double DataAnalyzer<T>::getRunTime(){ return runTime; }
+double DataAnalyzer::getRunTime(){ return runTime; }
 
-template <typename T>
-int DataAnalyzer<T>::getComparisons(){ return numComparisons; }
+int DataAnalyzer::getComparisons(){ return numComparisons; }
 
-template <typename T>
-int DataAnalyzer<T>::getSwaps(){ return numSwaps; }
+int DataAnalyzer::getSwaps(){ return numSwaps; }
 
-
-template <typename T>
-DataAnalyzer<T>::~DataAnalyzer()
+DataAnalyzer::~DataAnalyzer()
 {
 }

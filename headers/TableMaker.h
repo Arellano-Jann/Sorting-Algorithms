@@ -3,7 +3,6 @@
 
 #include "DataAnalyzer.h"
 
-template <typename T>
 class TableMaker
 {
 private:
@@ -16,9 +15,10 @@ private:
 
 public:
 	TableMaker(int rows, int columns);
-	bool insertRow(DataAnalyzer<T> *data);
 	void calculateAverages();
 	~TableMaker();
+
+	bool insertRow(DataAnalyzer *data);
 };
 
 #include "../src/TableMaker.cpp"
