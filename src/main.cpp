@@ -10,14 +10,14 @@ int main(){
 	NumberGenerator *n = new NumberGenerator(size);
 	std::cout << "Array: " << n->getArray() << std::endl;
 	n->getArrayContents();
-	InsertionSort<int> *b = new InsertionSort<int>(n->getArray(), n->getSize());
+	BubbleSort<int> *b = new BubbleSort<int>(n->getArray(), n->getSize());
 	std::cout << "Array: " << n->getArray() << std::endl;
 	n->getArrayContents();
 	std::cout << "Array: " << b->getArray() << std::endl;
 	// DataAnalyzer *d = new DataAnalyzer(b);
 	std::cout << "Number of swaps: " << b->getSwaps() << std::endl;
 	std::cout << "Number of comparisons: " << b->getComparisons() << std::endl;
-	std::cout << "Number of runs: " << b->getNumRunTime() << std::endl;
+	std::cout << "Number of runs: " << b->getRunTime() << std::endl;
 
 	NumberGenerator *one = new NumberGenerator(size);
 	std::cout << "Array: " << one->getArray() << std::endl;

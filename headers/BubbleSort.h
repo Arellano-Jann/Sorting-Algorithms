@@ -1,23 +1,15 @@
 #pragma once
 #define BUBBLESORT_H
+#include "SortingAlgorithms.h"
 
 template <typename T>
-class BubbleSort{
+class BubbleSort : public SortingAlgorithms<T> {
 private:
-	T *arr;
+	int* arr;
 	int size;
-	int swaps;
-	int comparisons;
-	int numRunTime;
-	void sort();
-	void swap(int currentIndex, int swapIndex);
+	void sort() override;
 public:
 	BubbleSort(T *arr, int size);
-	int* getArray() const;
-	int getSize() const;
-	int getSwaps() const;
-	int getComparisons() const;
-	int getNumRunTime() const;
 	~BubbleSort();
 };
 
