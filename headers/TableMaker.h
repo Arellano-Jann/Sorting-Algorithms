@@ -11,8 +11,9 @@ private:
 	// generate table and graph based on these values
 	int avgComparisons, avgSwaps, rows, columns;
 	double avgRunTime;
-	std::string** arr; // hopefully this works
+	// std::string** arr; // hopefully this works
 	// if this doesn't work, convert back to int and just add headers in the csvfile
+	int** arr;
 	std::string filename;
 	
 	
@@ -23,7 +24,7 @@ public:
 	TableMaker(std::string filename, int rows, int columns);
 	bool insertRow(DataAnalyzer *data);
 	void calculateAverages();
-	void setupTableHeaders();
+	// void setupTableHeaders();
 	void outputCSV();
 	~TableMaker();
 };

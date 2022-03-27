@@ -5,19 +5,22 @@ TableMaker::TableMaker(std::string filename, int rows, int columns)
 	, avgRunTime(0), avgComparisons(0), avgSwaps(0)
 	, filename(filename)
 {	
-	arr = new std::string*[rows];
+	// arr = new std::string*[rows];
+	// for(int i = 0; i < rows; ++i)
+    // 	arr[i] = new std::string[columns];
+	arr = new int*[rows];
 	for(int i = 0; i < rows; ++i)
-    	arr[i] = new std::string[columns];
+    	arr[i] = new int[columns];
 }
 
-void TableMaker::setupTableHeaders(){
-	arr[0][0] = "Run Time";
-	arr[0][1] = "Comparisons";
-	arr[0][2] = "Swaps";
-}
+// void TableMaker::setupTableHeaders(){
+// 	arr[0][0] = "Run Time";
+// 	arr[0][1] = "Comparisons";
+// 	arr[0][2] = "Swaps";
+// }
 
 bool TableMaker::insertRow(DataAnalyzer *data){
-	if (rows == 1) return false; // this is rows == 1 bc top rows are header and avg rows
+	if (rows == 2) return false; // this is rows == 1 bc top rows are header and avg rows
 
 	double runTime = data->getRunTime();
 	int comparisons = data->getComparisons();
@@ -26,11 +29,15 @@ bool TableMaker::insertRow(DataAnalyzer *data){
 	// std::cout << "Comparisons: " << comparisons << std::endl;
 	// std::cout << "Swaps: " << swaps << std::endl;
 	// otherwise insert data into last rowrow
-	arr[rows - 1][0] = std::to_string(runTime); // rows - 1 allows for no looping
-	arr[rows - 1][1] = std::to_string(comparisons); // time complexity go brrr
-	arr[rows - 1][2] = std::to_string(swaps);
+	// arr[rows - 1][0] = std::to_string(runTime); // rows - 1 allows for no looping
+	// arr[rows - 1][1] = std::to_string(comparisons); // time complexity go brrr
+	// arr[rows - 1][2] = std::to_string(swaps);
+	arr[rows - 1][0] = runTime; // rows - 1 allows for no looping
+	arr[rows - 1][1] = comparisons; // time complexity go brrr
+	arr[rows - 1][2] = swaps;
 	std::cout << arr[rows - 1][0] << arr[rows - 1][1] << arr[rows - 1][2] << std::endl;
 	--rows;
+	std::cout << rows << std::endl;
 	avgRunTime += runTime;
 	avgComparisons += comparisons;
 	avgSwaps += swaps;
@@ -43,25 +50,29 @@ void TableMaker::calculateAverages(){
 	avgRunTime /= rows;
 	avgComparisons /= rows;
 	avgSwaps /= rows;
-	arr[1][0] = std::to_string(avgRunTime);
-	arr[1][1] = std::to_string(avgComparisons);
-	arr[1][2] = std::to_string(avgSwaps);
+	// arr[1][0] = std::to_string(avgRunTime);
+	// arr[1][1] = std::to_string(avgComparisons);
+	// arr[1][2] = std::to_string(avgSwaps);
 }
 
 void TableMaker::outputCSV(){
 	try
     {
-        Csvfile csv("out.csv");
+        Csvfile csv("out.csv"); // make this take a filename in
+		csv << "Run Time" << "Comparisons" << "Swaps" << endrow;
         for (int i = 0; i < rows; i++)
 		{
 			for (int j = 0; j < columns; j++)
 			{
 				csv << arr[i][j]; // csv << arr[i][j] << ",";
-				std::cout << arr[i][j] << ",";
+				// std::cout << arr[i][j] << ",";
+				// csv << "hi";
 			}
 			csv << endrow;
 			std::cout << std::endl;
 		}
+		calculateAverages();
+		csv << avgRunTime << avgComparisons << avgSwaps << endrow;
     }
     catch (const std::exception &ex)
     {

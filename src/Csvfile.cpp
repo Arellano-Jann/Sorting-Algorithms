@@ -2,6 +2,7 @@
 
 void Csvfile::flush(){
 	file.flush();
+	// fs_.flush();
 }
 
 void Csvfile::endrow(){
