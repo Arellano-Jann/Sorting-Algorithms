@@ -22,10 +22,14 @@ bool TableMaker::insertRow(DataAnalyzer *data){
 	double runTime = data->getRunTime();
 	int comparisons = data->getComparisons();
 	int swaps = data->getSwaps();
+	// std::cout << "Run Time: " << runTime << std::endl;
+	// std::cout << "Comparisons: " << comparisons << std::endl;
+	// std::cout << "Swaps: " << swaps << std::endl;
 	// otherwise insert data into last rowrow
 	arr[rows - 1][0] = std::to_string(runTime); // rows - 1 allows for no looping
 	arr[rows - 1][1] = std::to_string(comparisons); // time complexity go brrr
 	arr[rows - 1][2] = std::to_string(swaps);
+	std::cout << arr[rows - 1][0] << arr[rows - 1][1] << arr[rows - 1][2] << std::endl;
 	--rows;
 	avgRunTime += runTime;
 	avgComparisons += comparisons;
@@ -47,14 +51,16 @@ void TableMaker::calculateAverages(){
 void TableMaker::outputCSV(){
 	try
     {
-        Csvfile csv("MyTable.csv");
+        Csvfile csv("out.csv");
         for (int i = 0; i < rows; i++)
 		{
 			for (int j = 0; j < columns; j++)
 			{
 				csv << arr[i][j]; // csv << arr[i][j] << ",";
+				std::cout << arr[i][j] << ",";
 			}
 			csv << endrow;
+			std::cout << std::endl;
 		}
     }
     catch (const std::exception &ex)
@@ -64,4 +70,4 @@ void TableMaker::outputCSV(){
 }
 
 TableMaker::~TableMaker()
-{}
+{ delete [] arr; }
