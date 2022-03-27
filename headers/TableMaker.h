@@ -26,8 +26,8 @@ public:
 	TableMaker(std::string filename, int rows, int columns);
 	bool insertRow(DataAnalyzer *data);
 	void calculateAverages();
-	void setupCSV();
-	void appendCSV(const TableMaker &table);
+	void setupCSVHeaders(std::string algo);
+	void appendCSV(const TableMaker &table); // get this working
 	Csvfile getCSV() const;
 	~TableMaker();
 };

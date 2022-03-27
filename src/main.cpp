@@ -78,7 +78,7 @@ int main(){
 	// 	delete seed100000;
 	// }	
 
-
+	// Brute force this. then automate it.
 	NumberGenerator *testGen = new NumberGenerator(100);
 	BubbleSort<int> *bubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
 	InsertionSort<int> *insertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
@@ -86,7 +86,7 @@ int main(){
 	DataAnalyzer *dinsertion = new DataAnalyzer(insertion);
 	
 	TableMaker *t = new TableMaker("output.csv", 3, 3);
-	t->setupCSV();
+	t->setupCSVHeaders("Bubble Sort");
 	t->insertRow(dbubble);
 	t->insertRow(dinsertion);t->insertRow(dinsertion);
 	t->calculateAverages();

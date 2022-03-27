@@ -17,9 +17,10 @@ TableMaker::TableMaker(std::string filename, int rows, int columns)
 	// std::cout << arr[totalRows - 1][0] << arr[totalRows - 1][1] << arr[totalRows - 1][2] << std::endl;
 	// std::cout << rows << std::endl;
 }
+	
 
-void TableMaker::setupCSV(){
-	csvfile << "Run Time" << "Comparisons" << "Swaps" << endrow;
+void TableMaker::setupCSVHeaders(std::string algo){
+	csvfile << algo << "Run Time" << "Comparisons" << "Swaps" << endrow;
 }
 
 // another way to do this would be to insert directly into the csvfile to avoid the need for a 2d array
@@ -67,7 +68,7 @@ bool TableMaker::insertRow(DataAnalyzer *data){
 	int comparisons = data->getComparisons();
 	int swaps = data->getSwaps();
 
-	csvfile << runTime << comparisons << swaps << endrow;
+	csvfile << "" << runTime << comparisons << swaps << endrow;
 
 	avgRunTime += runTime;
 	avgComparisons += comparisons;
@@ -81,7 +82,7 @@ void TableMaker::calculateAverages(){
 	avgRunTime /= totalRows;
 	avgComparisons /= totalRows;
 	avgSwaps /= totalRows;
-	csvfile << avgRunTime << avgComparisons << avgSwaps << endrow;
+	csvfile << "AVG" << avgRunTime << avgComparisons << avgSwaps << endrow;
 	avgRunTime = 0;
 	avgComparisons = 0;
 	avgSwaps = 0;
@@ -90,7 +91,7 @@ void TableMaker::calculateAverages(){
 	// arr[1][2] = std::to_string(avgSwaps);
 }
 
-// Csvfile* TableMaker::getCSV() const{ return csvfile; }
+// Csvfile TableMaker::getCSV() const{ return csvfile; }
 
 void TableMaker::appendCSV(const TableMaker &table){
 	// csvfile << table.getCSV() << endrow;
