@@ -90,8 +90,10 @@ void TableMaker::calculateAverages(){
 	// arr[1][2] = std::to_string(avgSwaps);
 }
 
+// Csvfile* TableMaker::getCSV() const{ return csvfile; }
+
 void TableMaker::appendCSV(const TableMaker &table){
-	// csvfile << table.csvfile << endrow;
+	// csvfile << table.getCSV() << endrow;
 }
 
 TableMaker::~TableMaker(){}

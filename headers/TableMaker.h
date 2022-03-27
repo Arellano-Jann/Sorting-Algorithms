@@ -4,6 +4,7 @@
 #include "DataAnalyzer.h"
 #include "Csvfile.h"
 #include <iostream>
+#include <memory>
 
 class TableMaker
 {
@@ -28,5 +29,6 @@ public:
 	void calculateAverages();
 	void setupCSV();
 	void appendCSV(const TableMaker &table);
+	Csvfile getCSV() const;
 	~TableMaker();
 };
