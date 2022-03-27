@@ -4,7 +4,6 @@
 #include "DataAnalyzer.h"
 #include "Csvfile.h"
 #include <iostream>
-#include <memory>
 
 class TableMaker
 {
