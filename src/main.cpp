@@ -7,51 +7,63 @@
 #include <string>
 
 int main(){
-	int size = 10;
-	NumberGenerator *n = new NumberGenerator(size);
-	// std::cout << "Array: " << n->getArray() << std::endl;
-	// n->getArrayContents();
-	BubbleSort<int> *b = new BubbleSort<int>(n->getArray(), n->getSize());
-	// std::cout << "Array: " << n->getArray() << std::endl;
-	// n->getArrayContents();
-	// std::cout << "Array: " << b->getArray() << std::endl;
-	// DataAnalyzer *d = new DataAnalyzer(b);
-	std::cout << "Number of swaps: " << b->getSwaps() << std::endl;
-	std::cout << "Number of comparisons: " << b->getComparisons() << std::endl;
-	std::cout << "Runtime: " << b->getRunTime() << std::endl;
+	// NumberGenerator 10x
+	// Naming: sortLetter seed# Size
+	NumberGenerator seedChanger;
+	NumberGenerator *ufirst1000 = new NumberGenerator(1000);
+	NumberGenerator *ufirst10000 = new NumberGenerator(10000);
+	NumberGenerator *ufirst100000 = new NumberGenerator(100000);
+	
+	seedChanger.changeSeed(1);
+	NumberGenerator *usecond1000 = new NumberGenerator(1000);
+	NumberGenerator *usecond10000 = new NumberGenerator(10000);
+	NumberGenerator *usecond100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(2);
+	NumberGenerator *uthird1000 = new NumberGenerator(1000);
+	NumberGenerator *uthird10000 = new NumberGenerator(10000);
+	NumberGenerator *uthird100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(3);
+	NumberGenerator *ufourth1000 = new NumberGenerator(1000);
+	NumberGenerator *ufourth10000 = new NumberGenerator(10000);
+	NumberGenerator *ufourth100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(4);
+	NumberGenerator *ufifth1000 = new NumberGenerator(1000);
+	NumberGenerator *ufifth10000 = new NumberGenerator(10000);
+	NumberGenerator *ufifth100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(5);
+	NumberGenerator *usixth1000 = new NumberGenerator(1000);
+	NumberGenerator *usixth10000 = new NumberGenerator(10000);
+	NumberGenerator *usixth100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(6);
+	NumberGenerator *useventh1000 = new NumberGenerator(1000);
+	NumberGenerator *useventh10000 = new NumberGenerator(10000);
+	NumberGenerator *useventh100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(7);
+	NumberGenerator *ueighth1000 = new NumberGenerator(1000);
+	NumberGenerator *ueighth10000 = new NumberGenerator(10000);
+	NumberGenerator *ueighth100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(8);
+	NumberGenerator *uninth1000 = new NumberGenerator(1000);
+	NumberGenerator *uninth10000 = new NumberGenerator(10000);
+	NumberGenerator *uninth100000 = new NumberGenerator(100000);
+	seedChanger.changeSeed(9);
+	NumberGenerator *utenth1000 = new NumberGenerator(1000);
+	NumberGenerator *utenth10000 = new NumberGenerator(10000);
+	NumberGenerator *utenth100000 = new NumberGenerator(100000);
+
+	
+
+
+
+	BubbleSort<int> *u1bubble1000 = new BubbleSort<int>(n->getArray(), n->getSize());
 
 	DataAnalyzer *d = new DataAnalyzer(b);
-	std::cout << "Number of swaps: " << d->getSwaps() << std::endl;
-	std::cout << "Number of comparisons: " << d->getComparisons() << std::endl;
-	std::cout << "Runtime: " << d->getRunTime() << std::endl;
 	
 	TableMaker *t = new TableMaker("output.csv", 3, 3);
-	// t->setupTableHeaders();
-	// for (int i = 0; i < 10; i++){
-		t->insertRow(d);
-		t->insertRow(d);t->insertRow(d);
-		// t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
-		// t->insertRow(d);t->insertRow(d);t->insertRow(d);t->insertRow(d);
-	// }
+	t->insertRow(d);
+	t->insertRow(d);t->insertRow(d);
 	t->calculateAverages();
 	t->outputCSV();
 
-
-
-
-
-	NumberGenerator *one = new NumberGenerator(size);
-	// std::cout << "Array: " << one->getArray() << std::endl;
-	// one->getArrayContents();
-	NumberGenerator *two = new NumberGenerator(size);
-	// std::cout << "Array: " << two->getArray() << std::endl;
-	// two->getArrayContents();
-	two->changeSeed();
-	NumberGenerator *three = new NumberGenerator(size);
-	// std::cout << "Array: " << three->getArray() << std::endl;
-	// three->getArrayContents();
-	// std::cout << "Number of swaps: " << d->numSwaps << std::endl;
-	// std::cout << "Number of comparisons: " << d->numComparisons << std::endl;
-	// std::cout << "Number of runs: " << d->numRunTime << std::endl;
 	return 0;
 }

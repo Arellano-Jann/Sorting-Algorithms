@@ -11,6 +11,7 @@ private:
 	static int seed; // seed for the generator
 public:
 	// NumberGenerator(int *arr, int size);
+	NumberGenerator();
 	NumberGenerator(int size); // generator is based on size and seed
 	int* getArray() const;
 	void getArrayContents() const;
