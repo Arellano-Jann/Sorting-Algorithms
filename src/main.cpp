@@ -7,6 +7,7 @@
 #include <string>
 
 int main(){
+	std::cout << "Please wait. Generating data..." << std::endl;
 	// NumberGenerator 10x
 	// Naming: sortLetter seed# Size
 	// NumberGenerator seedChanger = NumberGenerator(1);
@@ -58,6 +59,8 @@ int main(){
 	// BubbleSort<int> *sbubble1000;
 	// BubbleSort<int> *sbubble10000;
 	// BubbleSort<int> *sbubble100000;
+	std::cout << "Finished generating data." << std::endl;
+	std::cout << "Please wait. Calculating averages..." << std::endl;
 	// for (int i = 0; i < 10; i++){
 	// 	seedChanger.changeSeed(i);
 	// 	NumberGenerator *seed1000 = new NumberGenerator(1000);
@@ -67,10 +70,12 @@ int main(){
 
 
 
+
+
 	// 	delete seed1000;
 	// 	delete seed10000;
 	// 	delete seed100000;
-	// }
+	// }	
 
 
 	NumberGenerator *testGen = new NumberGenerator(100);
@@ -82,6 +87,6 @@ int main(){
 	t->insertRow(d);t->insertRow(d);
 	t->calculateAverages();
 	// t->outputCSV();
-
+	std::cout << "CSV File Outputted." << std::endl;
 	return 0;
 }
