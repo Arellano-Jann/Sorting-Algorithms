@@ -3,27 +3,20 @@
 
 #include "DataAnalyzer.h"
 
+template <typename T>
 class TableMaker
 {
 private:
 	// generate table and graph based on these values
-	int avgRunTime;
-	int avgComparisons;
-	int avgSwaps;
-	int totalRows;
+	int avgRunTime, avgComparisons, avgSwaps, rows, columns, ,
 
 	// use avgRunTime to make a graph
 	// sort between sorted and unsorted graphs w algos
 
 public:
-	TableMaker(/* args */);
+	TableMaker(int rows, int columns);
+	bool insertRow(DataAnalyzer<T> *data);
 	~TableMaker();
 };
 
-TableMaker::TableMaker(/* args */)
-{
-}
-
-TableMaker::~TableMaker()
-{
-}
+#include "../src/TableMaker.cpp"
