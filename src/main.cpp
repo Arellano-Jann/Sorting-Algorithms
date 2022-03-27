@@ -6,7 +6,7 @@
 #include <string>
 
 int main(){
-	int size = 1000;
+	int size = 10;
 	NumberGenerator *n = new NumberGenerator(size);
 	// std::cout << "Array: " << n->getArray() << std::endl;
 	// n->getArrayContents();
