@@ -1,7 +1,7 @@
 #include "../headers/DataAnalyzer.h"
 
 template <typename T>
-DataAnalyzer::DataAnalyzer(SortingAlgorithms<T> *algo){
+DataAnalyzer::DataAnalyzer(const SortingAlgorithms<T> *algo){
 	runTime = algo->getRunTime();
 	numComparisons = algo->getComparisons();
 	numSwaps = algo->getSwaps();

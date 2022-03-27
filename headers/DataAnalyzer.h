@@ -13,8 +13,8 @@ private:
 public:
 	// DataAnalyzer(/* args */);
 	template <typename T>
-	DataAnalyzer(SortingAlgorithms<T> *algo);
-	
+	DataAnalyzer(const SortingAlgorithms<T> *algo);
+
 	double getRunTime();
 	int getComparisons();
 	int getSwaps();

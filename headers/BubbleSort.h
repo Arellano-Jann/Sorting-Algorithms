@@ -5,7 +5,7 @@
 template <typename T>
 class BubbleSort : public SortingAlgorithms<T> {
 private:
-	int* arr;
+	T* arr;
 	int size;
 	void sort() override;
 public:

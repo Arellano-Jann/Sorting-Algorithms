@@ -2,6 +2,7 @@
 #include "../headers/InsertionSort.h"
 #include "../headers/DataAnalyzer.h"
 #include "../headers/NumberGenerator.h"
+#include "../headers/TableMaker.h"
 #include <iostream>
 #include <string>
 
@@ -19,7 +20,16 @@ int main(){
 	std::cout << "Number of comparisons: " << b->getComparisons() << std::endl;
 	std::cout << "Runtime: " << b->getRunTime() << std::endl;
 
+	DataAnalyzer *d = new DataAnalyzer(b);
+	std::cout << "Number of swaps: " << d->getSwaps() << std::endl;
+	std::cout << "Number of comparisons: " << d->getComparisons() << std::endl;
+	std::cout << "Runtime: " << d->getRunTime() << std::endl;
 	
+	TableMaker *t = new TableMaker("output.csv", 12, 3);
+
+
+
+
 
 	NumberGenerator *one = new NumberGenerator(size);
 	// std::cout << "Array: " << one->getArray() << std::endl;
