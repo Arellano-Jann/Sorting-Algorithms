@@ -34,16 +34,18 @@ void MergeSort<T>::mergeArray(int left, int middle, int right){
 	T finalArray[size]; // not sure if this works
 	int l = left;
 	int m = middle+1;
-	int r = right;
+	int r = left;
 	while(l <= middle && m <= right){
 		// SortingAlgorithms<T>::incrementComparisons();
 		if(arr[l] < arr[m]){
 			finalArray[r] = arr[l];
+			// std::cout << "line 42" << std::endl;
 			// SortingAlgorithms<T>::incrementSwaps();
 			l++;
 		}
 		else{
 			finalArray[r] = arr[m];
+			// std::cout << "line 48" << std::endl;
 			// SortingAlgorithms<T>::incrementSwaps();
 			m++;
 		}
@@ -51,11 +53,14 @@ void MergeSort<T>::mergeArray(int left, int middle, int right){
 
 	// only empties out one of the sides.
 	while(l <= middle){ // empties out left side
-		
-		std::cout << "l: " << l;
+	if (r > size-1 || l > size-1)
+		{
+			std::cout << "size: " << size;
+		std::cout << " l: " << l;
 		std::cout << " middle: " << middle;
 		std::cout << " r: " << r << " ";
 		std::cout << finalArray[r] << " " << arr[l] << std::endl;
+	}
 
 		// finalArray[r] = arr[l];
 		// SortingAlgorithms<T>::incrementSwaps();
@@ -63,10 +68,14 @@ void MergeSort<T>::mergeArray(int left, int middle, int right){
 		r++;
 	}
 	while(m <= right){ // empties out right side
-		std::cout << "m: " << m;
+	if (r > size-1 || l > size-1)
+		{
+			std::cout << "size: " << size;
+		std::cout << " m: " << m;
 		std::cout << " right: " << right;
 		std::cout << " r: " << r << " ";
 		std::cout << finalArray[r] << " " << arr[m] << std::endl;
+		}
 		// finalArray[r] = arr[m];
 		// SortingAlgorithms<T>::incrementSwaps();
 		m++;
