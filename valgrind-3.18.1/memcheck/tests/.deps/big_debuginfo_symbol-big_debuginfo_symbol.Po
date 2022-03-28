@@ -1,0 +1,4 @@
+big_debuginfo_symbol-big_debuginfo_symbol.o: big_debuginfo_symbol.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

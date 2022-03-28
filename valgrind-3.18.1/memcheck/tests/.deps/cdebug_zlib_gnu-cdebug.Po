@@ -1,0 +1,3 @@
+cdebug_zlib_gnu-cdebug.o: cdebug.c /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

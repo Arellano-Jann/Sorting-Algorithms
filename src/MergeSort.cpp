@@ -31,7 +31,7 @@ void MergeSort<T>::splitArray(int left, int right){
 
 template <typename T>
 void MergeSort<T>::mergeArray(int left, int middle, int right){
-	T* finalArray = new T[size];
+	T finalArray = T[size];
 	int l = left;
 	int m = middle+1;
 	int r = right;

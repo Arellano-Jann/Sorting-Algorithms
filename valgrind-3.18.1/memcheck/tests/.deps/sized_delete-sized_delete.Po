@@ -1,0 +1,3 @@
+sized_delete-sized_delete.o: sized_delete.cpp /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

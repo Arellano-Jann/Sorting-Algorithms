@@ -13,10 +13,6 @@ int main(){
 	bool first = false;
 	bool second = false;
 	bool third = false;
-
-	// Brute force this. then automate it.
-	// Bubble Sort
-	// Remember to make 1000 elements change
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
 			NumberGenerator *testGen = new NumberGenerator(10);
