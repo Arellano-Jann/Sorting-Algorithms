@@ -11,8 +11,8 @@ int main(){
 	std::cout << "Please wait. Generating data..." << std::endl;
 	NumberGenerator seedChanger = NumberGenerator(1);
 	bool first = true;
-	bool second = false;
-	bool third = false;
+	bool second = true;
+	bool third = true;
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
 			// NumberGenerator *testGen = new NumberGenerator(100);
@@ -215,6 +215,37 @@ if (second)
 // 100000
 if (third)
 {
+
+	
+	// Merge Sort
+	seedChanger.changeSeed(0);
+	{
+		TableMaker *ub100000 = new TableMaker("UnsortedMergeSort100000.csv", 10, 3);
+		TableMaker *sb100000 = new TableMaker("SortedMergeSort100000.csv", 10, 3);
+		ub100000->setupCSVHeaders("Unsorted MergeSort");
+		sb100000->setupCSVHeaders("Sorted MergeSort");
+		for (int i = 0; i < 10; i++){
+			NumberGenerator *testGen = new NumberGenerator(100000);
+			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
+			ub100000->insertRow(duMergeSort);
+			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+			sb100000->insertRow(dsMergeSort);
+			testGen->changeSeed();
+
+			delete testGen;
+			delete uMergeSort;
+			delete sMergeSort;
+			delete duMergeSort;
+			delete dsMergeSort;
+		}
+		ub100000->calculateAverages();
+		sb100000->calculateAverages();
+		delete ub100000;
+		delete sb100000;
+	}
+
 	seedChanger.changeSeed(0);
 	{
 		TableMaker *ub100000 = new TableMaker("UnsortedBubble100000.csv", 10, 3);
@@ -272,34 +303,6 @@ if (third)
 		delete sb100000;
 	}
 
-	// Merge Sort
-	seedChanger.changeSeed(0);
-	{
-		TableMaker *ub100000 = new TableMaker("UnsortedMergeSort100000.csv", 10, 3);
-		TableMaker *sb100000 = new TableMaker("SortedMergeSort100000.csv", 10, 3);
-		ub100000->setupCSVHeaders("Unsorted MergeSort");
-		sb100000->setupCSVHeaders("Sorted MergeSort");
-		for (int i = 0; i < 10; i++){
-			NumberGenerator *testGen = new NumberGenerator(100000);
-			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
-			ub100000->insertRow(duMergeSort);
-			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
-			sb100000->insertRow(dsMergeSort);
-			testGen->changeSeed();
-
-			delete testGen;
-			delete uMergeSort;
-			delete sMergeSort;
-			delete duMergeSort;
-			delete dsMergeSort;
-		}
-		ub100000->calculateAverages();
-		sb100000->calculateAverages();
-		delete ub100000;
-		delete sb100000;
-	}
 }
 	
 	// Test Code
