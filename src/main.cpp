@@ -89,7 +89,7 @@ int main(){
 		ub1000->setupCSVHeaders("Unsorted Bubble Sort");
 		sb1000->setupCSVHeaders("Sorted Bubble Sort");
 		for (int i = 0; i < 10; i++){
-			NumberGenerator *testGen = new NumberGenerator(numGen);
+			NumberGenerator *testGen = new NumberGenerator(numGen);m 
 			BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *dububble = new DataAnalyzer(ububble);
 			ub1000->insertRow(dububble);
