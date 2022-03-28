@@ -81,13 +81,15 @@ int main(){
 	// Brute force this. then automate it.
 	// Bubble Sort
 	// Remember to make 1000 elements change
+	for (int numGen = 1000; numGen <= 100000; numGen*10)
+{
 	{
 		TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
 		TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
 		ub1000->setupCSVHeaders("Unsorted Bubble Sort");
 		sb1000->setupCSVHeaders("Sorted Bubble Sort");
 		for (int i = 0; i < 10; i++){
-			NumberGenerator *testGen = new NumberGenerator(100);
+			NumberGenerator *testGen = new NumberGenerator(numGen);
 			BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *dububble = new DataAnalyzer(ububble);
 			ub1000->insertRow(dububble);
@@ -115,7 +117,7 @@ int main(){
 		ub1000->setupCSVHeaders("Unsorted Insertion Sort");
 		sb1000->setupCSVHeaders("Sorted Insertion Sort");
 		for (int i = 0; i < 10; i++){
-			NumberGenerator *testGen = new NumberGenerator(100);
+			NumberGenerator *testGen = new NumberGenerator(numGen);
 			InsertionSort<int> *uinsertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *duinsertion = new DataAnalyzer(uinsertion);
 			ub1000->insertRow(duinsertion);
@@ -137,34 +139,34 @@ int main(){
 	}
 
 	// Merge Sort
-	{
-		TableMaker *ub1000 = new TableMaker("UnsortedMergeSort1000.csv", 10, 3);
-		TableMaker *sb1000 = new TableMaker("SortedMergeSort1000.csv", 10, 3);
-		ub1000->setupCSVHeaders("Unsorted MergeSort");
-		sb1000->setupCSVHeaders("Sorted MergeSort");
-		for (int i = 0; i < 10; i++){
-			NumberGenerator *testGen = new NumberGenerator(100);
-			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
-			ub1000->insertRow(duMergeSort);
-			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
-			sb1000->insertRow(dsMergeSort);
-			testGen->changeSeed();
+	// {
+	// 	TableMaker *ub1000 = new TableMaker("UnsortedMergeSort1000.csv", 10, 3);
+	// 	TableMaker *sb1000 = new TableMaker("SortedMergeSort1000.csv", 10, 3);
+	// 	ub1000->setupCSVHeaders("Unsorted MergeSort");
+	// 	sb1000->setupCSVHeaders("Sorted MergeSort");
+	// 	for (int i = 0; i < 10; i++){
+	// 		NumberGenerator *testGen = new NumberGenerator(numGen);
+	// 		MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+	// 		DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
+	// 		ub1000->insertRow(duMergeSort);
+	// 		MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+	// 		DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+	// 		sb1000->insertRow(dsMergeSort);
+	// 		testGen->changeSeed();
 
-			delete testGen;
-			delete uMergeSort;
-			delete sMergeSort;
-			delete duMergeSort;
-			delete dsMergeSort;
-		}
-		ub1000->calculateAverages();
-		sb1000->calculateAverages();
-		delete ub1000;
-		delete sb1000;
-	}
-
+	// 		delete testGen;
+	// 		delete uMergeSort;
+	// 		delete sMergeSort;
+	// 		delete duMergeSort;
+	// 		delete dsMergeSort;
+	// 	}
+	// 	ub1000->calculateAverages();
+	// 	sb1000->calculateAverages();
+	// 	delete ub1000;
+	// 	delete sb1000;
+	// }
 	// t->outputCSV();
+}
 	
 	// InsertionSort<int> *insertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
 	// DataAnalyzer *dinsertion = new DataAnalyzer(insertion);
