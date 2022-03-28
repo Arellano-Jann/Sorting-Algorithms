@@ -79,28 +79,90 @@ int main(){
 	// }	
 
 	// Brute force this. then automate it.
-	TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
-	TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
-	ub1000->setupCSVHeaders("Unsorted Bubble Sort");
-	sb1000->setupCSVHeaders("Sorted Bubble Sort");
-	for (int i = 0; i < 10; i++){
-		NumberGenerator *testGen = new NumberGenerator(100);
-		BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-		DataAnalyzer *dububble = new DataAnalyzer(ububble);
-		ub1000->insertRow(dububble);
-		BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-		DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
-		sb1000->insertRow(dsbubble);
-		testGen->changeSeed();
+	// Bubble Sort
+	// Remember to make 1000 elements change
+	{
+		TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
+		TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
+		ub1000->setupCSVHeaders("Unsorted Bubble Sort");
+		sb1000->setupCSVHeaders("Sorted Bubble Sort");
+		for (int i = 0; i < 10; i++){
+			NumberGenerator *testGen = new NumberGenerator(100);
+			BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dububble = new DataAnalyzer(ububble);
+			ub1000->insertRow(dububble);
+			BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
+			sb1000->insertRow(dsbubble);
+			testGen->changeSeed();
 
-		delete testGen;
-		delete ububble;
-		delete sbubble;
-		delete dububble;
-		delete dsbubble;
+			delete testGen;
+			delete ububble;
+			delete sbubble;
+			delete dububble;
+			delete dsbubble;
+		}
+		ub1000->calculateAverages();
+		sb1000->calculateAverages();
+		delete ub1000;
+		delete sb1000;
 	}
-	ub1000->calculateAverages();
-	sb1000->calculateAverages();
+
+	// Insertion Sort
+	{
+		TableMaker *ub1000 = new TableMaker("UnsortedInsertion1000.csv", 10, 3);
+		TableMaker *sb1000 = new TableMaker("SortedInsertion1000.csv", 10, 3);
+		ub1000->setupCSVHeaders("Unsorted Insertion Sort");
+		sb1000->setupCSVHeaders("Sorted Insertion Sort");
+		for (int i = 0; i < 10; i++){
+			NumberGenerator *testGen = new NumberGenerator(100);
+			InsertionSort<int> *uinsertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *duinsertion = new DataAnalyzer(uinsertion);
+			ub1000->insertRow(duinsertion);
+			InsertionSort<int> *sinsertion = new InsertionSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsinsertion = new DataAnalyzer(sinsertion);
+			sb1000->insertRow(dsinsertion);
+			testGen->changeSeed();
+
+			delete testGen;
+			delete uinsertion;
+			delete sinsertion;
+			delete duinsertion;
+			delete dsinsertion;
+		}
+		ub1000->calculateAverages();
+		sb1000->calculateAverages();
+		delete ub1000;
+		delete sb1000;
+	}
+
+	// Merge Sort
+	{
+		TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
+		TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
+		ub1000->setupCSVHeaders("Unsorted Bubble Sort");
+		sb1000->setupCSVHeaders("Sorted Bubble Sort");
+		for (int i = 0; i < 10; i++){
+			NumberGenerator *testGen = new NumberGenerator(100);
+			BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dububble = new DataAnalyzer(ububble);
+			ub1000->insertRow(dububble);
+			BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
+			sb1000->insertRow(dsbubble);
+			testGen->changeSeed();
+
+			delete testGen;
+			delete ububble;
+			delete sbubble;
+			delete dububble;
+			delete dsbubble;
+		}
+		ub1000->calculateAverages();
+		sb1000->calculateAverages();
+		delete ub1000;
+		delete sb1000;
+	}
 
 	// t->outputCSV();
 	
@@ -111,7 +173,7 @@ int main(){
 	// Test if number gen will be copied and changed etc
 	// NumberGenerator gen1 = NumberGenerator(10);
 	// int uarr1[] = gen1.getArray();
-	// BubbleSort<int> *testBubble1 = new BubbleSort<int>(gen1.getArray(), gen1.getSize());
+	// bubbleSort<int> *testBubble1 = new BubbleSort<int>(gen1.getArray(), gen1.getSize());
 	// int sarr1[] = gen1.getArray();
 
 	// NumberGenerator gen2 = NumberGenerator(10);
