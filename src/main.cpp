@@ -81,7 +81,8 @@ int main(){
 	// Brute force this. then automate it.
 	TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
 	TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
-	ub1000->setupCSVHeaders("Bubble Sort");
+	ub1000->setupCSVHeaders("Unsorted Bubble Sort");
+	sb1000->setupCSVHeaders("Sorted Bubble Sort");
 	for (int i = 0; i < 10; i++){
 		NumberGenerator *testGen = new NumberGenerator(100);
 		BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
@@ -89,15 +90,17 @@ int main(){
 		ub1000->insertRow(dububble);
 		BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
 		DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
+		sb1000->insertRow(dsbubble);
 		testGen->changeSeed();
 
 		delete testGen;
 		delete ububble;
 		delete sbubble;
-		delete duBubble;
-		delete dsBubble;
+		delete dububble;
+		delete dsbubble;
 	}
 	ub1000->calculateAverages();
+	sb1000->calculateAverages();
 
 	// t->outputCSV();
 	
