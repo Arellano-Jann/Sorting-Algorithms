@@ -7,6 +7,7 @@ private:
 	T* arr;
 	int size;
 	T* finalArray;
+	// int* finalArray;
 	void sort() override;
 	void splitArray(int left, int right);
 	void mergeArray(int left, int middle, int right);
