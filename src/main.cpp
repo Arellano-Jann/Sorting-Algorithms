@@ -10,7 +10,7 @@
 int main(){
 	std::cout << "Please wait. Generating data..." << std::endl;
 	NumberGenerator seedChanger = NumberGenerator(1);
-	bool first = true;
+	bool first = false;
 	bool second = false;
 	bool third = false;
 
