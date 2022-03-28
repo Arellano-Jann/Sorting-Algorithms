@@ -138,25 +138,25 @@ int main(){
 
 	// Merge Sort
 	{
-		TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
-		TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
-		ub1000->setupCSVHeaders("Unsorted Bubble Sort");
-		sb1000->setupCSVHeaders("Sorted Bubble Sort");
+		TableMaker *ub1000 = new TableMaker("UnsortedMergeSort1000.csv", 10, 3);
+		TableMaker *sb1000 = new TableMaker("SortedMergeSort1000.csv", 10, 3);
+		ub1000->setupCSVHeaders("Unsorted MergeSort");
+		sb1000->setupCSVHeaders("Sorted MergeSort");
 		for (int i = 0; i < 10; i++){
 			NumberGenerator *testGen = new NumberGenerator(100);
-			BubbleSort<int> *ububble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *dububble = new DataAnalyzer(ububble);
-			ub1000->insertRow(dububble);
-			BubbleSort<int> *sbubble = new BubbleSort<int>(testGen->getArray(), testGen->getSize());
-			DataAnalyzer *dsbubble = new DataAnalyzer(sbubble);
-			sb1000->insertRow(dsbubble);
+			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
+			ub1000->insertRow(duMergeSort);
+			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+			sb1000->insertRow(dsMergeSort);
 			testGen->changeSeed();
 
 			delete testGen;
-			delete ububble;
-			delete sbubble;
-			delete dububble;
-			delete dsbubble;
+			delete uMergeSort;
+			delete sMergeSort;
+			delete duMergeSort;
+			delete dsMergeSort;
 		}
 		ub1000->calculateAverages();
 		sb1000->calculateAverages();
