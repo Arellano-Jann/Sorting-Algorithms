@@ -10,7 +10,7 @@
 int main(){
 	std::cout << "Please wait. Generating data..." << std::endl;
 	NumberGenerator seedChanger = NumberGenerator(1);
-	bool first = true;
+	bool first = false;
 	bool second = false;
 	bool third = false;
 
@@ -18,6 +18,13 @@ int main(){
 	// Bubble Sort
 	// Remember to make 1000 elements change
 	// for (int numGen = 10; numGen <= 100; numGen*10)
+
+			NumberGenerator *testGen = new NumberGenerator(10);
+			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
+			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
+			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+
 // 1000
 if (first)
 {

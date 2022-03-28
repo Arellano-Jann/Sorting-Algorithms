@@ -6,7 +6,7 @@ class MergeSort : public SortingAlgorithms<T>{
 private:
 	T* arr;
 	int size;
-	T* finalArray;
+	// T* finalArray;
 	// int* finalArray;
 	void sort() override;
 	void splitArray(int left, int right);

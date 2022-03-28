@@ -1,7 +1,7 @@
 template <typename T>
 MergeSort<T>::MergeSort(T *arr, int size)
 	: SortingAlgorithms<T>(arr, size)
-	, finalArray(arr)
+	// , finalArray(arr)
 { 
 	MergeSort<T>::arr = SortingAlgorithms<T>::getArray();
 	MergeSort<T>::size = SortingAlgorithms<T>::getSize();
@@ -31,6 +31,7 @@ void MergeSort<T>::splitArray(int left, int right){
 
 template <typename T>
 void MergeSort<T>::mergeArray(int left, int middle, int right){
+	T* finalArray = new T[size];
 	int l = left;
 	int m = middle+1;
 	int r = right;
