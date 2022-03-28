@@ -1,11 +1,12 @@
 template <typename T>
 MergeSort<T>::MergeSort(T *arr, int size)
 	: SortingAlgorithms<T>(arr, size)
+	, finalArray(arr)
 { 
 	MergeSort<T>::arr = SortingAlgorithms<T>::getArray();
 	MergeSort<T>::size = SortingAlgorithms<T>::getSize();
 	// finalArray[size];
-	MergeSort<T>::finalArray = new T[MergeSort<T>::size];
+	// MergeSort<T>::finalArray = new T[MergeSort<T>::size];
 	sort();
 }
 
