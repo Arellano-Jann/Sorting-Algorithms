@@ -9,7 +9,9 @@ private:
 	void sort() override;
 public:
 	InsertionSort(T *arr, int size);
-	~InsertionSort();
+	~InsertionSort(){
+		// delete[] arr;
+	}
 };
 
 #include "../src/InsertionSort.cpp"

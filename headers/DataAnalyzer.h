@@ -22,5 +22,5 @@ public:
 	double getRunTime();
 	int getComparisons();
 	int getSwaps();
-	~DataAnalyzer();
+	~DataAnalyzer(){}
 };

@@ -10,7 +10,9 @@ private:
 	void sort() override;
 public:
 	BubbleSort(T *arr, int size);
-	~BubbleSort();
+	~BubbleSort(){
+		// delete[] arr;
+	}
 };
 
 #include "../src/BubbleSort.cpp"

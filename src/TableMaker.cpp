@@ -96,6 +96,3 @@ void TableMaker::calculateAverages(){
 void TableMaker::appendCSV(const TableMaker &table){
 	// csvfile << table.getCSV() << endrow;
 }
-
-TableMaker::~TableMaker(){}
-// { delete [] arr; }

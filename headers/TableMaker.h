@@ -29,5 +29,5 @@ public:
 	void setupCSVHeaders(std::string algo);
 	void appendCSV(const TableMaker &table); // get this working
 	Csvfile getCSV() const;
-	~TableMaker();
+	~TableMaker(){}
 };

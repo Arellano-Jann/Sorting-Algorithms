@@ -13,7 +13,10 @@ private:
 	void mergeArray(int left, int middle, int right);
 public:
 	MergeSort(T *arr, int size);
-	~MergeSort();
+	~MergeSort(){
+		// delete[] arr;
+		// delete[] finalArray;
+	}
 };
 
 #include "../src/MergeSort.cpp"

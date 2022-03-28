@@ -13,6 +13,6 @@ int DataAnalyzer::getComparisons(){ return numComparisons; }
 
 int DataAnalyzer::getSwaps(){ return numSwaps; }
 
-DataAnalyzer::~DataAnalyzer()
-{
-}
+// DataAnalyzer::~DataAnalyzer()
+// {
+// }

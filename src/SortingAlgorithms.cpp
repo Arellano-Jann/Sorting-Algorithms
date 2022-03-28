@@ -40,7 +40,7 @@ template <typename T>
 void SortingAlgorithms<T>::setRunTime(double newRunTime){ runTime = newRunTime; }
 
 
-template <typename T>
-SortingAlgorithms<T>::~SortingAlgorithms()
-{
-}
+// template <typename T>
+// SortingAlgorithms<T>::~SortingAlgorithms()
+// {
+// }

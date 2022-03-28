@@ -15,7 +15,9 @@ private:
 public:
 	SortingAlgorithms(T *arr, int size);
 	void swap(int currentIndex, int swapIndex);
-	~SortingAlgorithms();
+	~SortingAlgorithms(){
+		// delete[] arr;
+	}
 
 	int* getArray() const;
 	int getSize() const;

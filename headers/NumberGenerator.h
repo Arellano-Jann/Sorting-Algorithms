@@ -18,5 +18,7 @@ public:
 	int getSize() const;
 	int changeSeed();
 	int changeSeed(int newSeed);
-	~NumberGenerator();
+	~NumberGenerator(){
+		delete[] arr;
+	}
 };

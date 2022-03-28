@@ -23,7 +23,7 @@ void InsertionSort<T>::sort(){
 	SortingAlgorithms<T>::setRunTime(1000.0 * (end-start) / CLOCKS_PER_SEC);
 }
 
-template <typename T>
-InsertionSort<T>::~InsertionSort()
-{
-}
+// template <typename T>
+// InsertionSort<T>::~InsertionSort()
+// {
+// }

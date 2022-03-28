@@ -39,5 +39,5 @@ int NumberGenerator::changeSeed(int newSeed){
 	return seed;
 }
 
-NumberGenerator::~NumberGenerator(){
-	delete[] arr; }
+// NumberGenerator::~NumberGenerator(){
+// 	delete[] arr; }
