@@ -16,7 +16,7 @@ int main(){
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
 			NumberGenerator *testGen = new NumberGenerator(100);
-			std::cout << testGen->getArray()[99] << std::endl;
+			// std::cout << testGen->getArray()[99] << std::endl;
 			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
 			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
@@ -25,7 +25,7 @@ int main(){
 			TableMaker *tester2 = new TableMaker("Tester2.csv", 1, 3);
 			tester1->insertRow(duMergeSort);
 			tester2->insertRow(dsMergeSort);
-			std::cout << testGen->getArray()[99] << std::endl;
+			// std::cout << testGen->getArray()[99] << std::endl;
 			delete testGen;
 			delete uMergeSort;
 			delete duMergeSort;
