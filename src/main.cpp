@@ -11,7 +11,7 @@ int main(){
 	std::cout << "Please wait. Generating data..." << std::endl;
 	// NumberGenerator 10x
 	// Naming: sortLetter seed# Size
-	// NumberGenerator seedChanger = NumberGenerator(1);
+	NumberGenerator seedChanger = NumberGenerator(1);
 	// NumberGenerator *ufirst1000 = new NumberGenerator(1000);
 	// NumberGenerator *ufirst10000 = new NumberGenerator(10000);
 	// NumberGenerator *ufirst100000 = new NumberGenerator(100000);
@@ -83,6 +83,7 @@ int main(){
 	// Remember to make 1000 elements change
 	for (int numGen = 1000; numGen <= 100000; numGen*10)
 {
+	seedChanger.changeSeed(0);
 	{
 		TableMaker *ub1000 = new TableMaker("UnsortedBubble1000.csv", 10, 3);
 		TableMaker *sb1000 = new TableMaker("SortedBubble1000.csv", 10, 3);
@@ -111,6 +112,7 @@ int main(){
 	}
 
 	// Insertion Sort
+	seedChanger.changeSeed(0);
 	{
 		TableMaker *ub1000 = new TableMaker("UnsortedInsertion1000.csv", 10, 3);
 		TableMaker *sb1000 = new TableMaker("SortedInsertion1000.csv", 10, 3);
@@ -139,6 +141,7 @@ int main(){
 	}
 
 	// Merge Sort
+	seedChanger.changeSeed(0);
 	// {
 	// 	TableMaker *ub1000 = new TableMaker("UnsortedMergeSort1000.csv", 10, 3);
 	// 	TableMaker *sb1000 = new TableMaker("SortedMergeSort1000.csv", 10, 3);
