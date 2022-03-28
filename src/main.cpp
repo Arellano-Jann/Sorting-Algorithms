@@ -15,7 +15,7 @@ int main(){
 	bool third = false;
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
-			NumberGenerator *testGen = new NumberGenerator(100);
+			NumberGenerator *testGen = new NumberGenerator(1000);
 			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
 			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
