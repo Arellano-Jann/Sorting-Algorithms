@@ -15,11 +15,17 @@ int main(){
 	bool third = false;
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
-			NumberGenerator *testGen = new NumberGenerator(1000);
+			NumberGenerator *testGen = new NumberGenerator(100);
+			std::cout << testGen->getArray()[99] << std::endl;
 			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
 			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+			TableMaker *tester1 = new TableMaker("Tester1.csv", 1, 3);
+			TableMaker *tester2 = new TableMaker("Tester2.csv", 1, 3);
+			tester1->insertRow(duMergeSort);
+			tester2->insertRow(dsMergeSort);
+			std::cout << testGen->getArray()[99] << std::endl;
 			delete testGen;
 			delete uMergeSort;
 			delete duMergeSort;

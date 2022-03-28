@@ -62,8 +62,8 @@ void MergeSort<T>::mergeArray(int left, int middle, int right){
 		m++;
 		r++;
 	}
-	for(r = right; r <= left; r++){
-		arr[r] = finalArray[r];
+	for(l = left; l <= right; l++){
+		arr[l] = finalArray[l];
 		// SortingAlgorithms<T>::incrementSwaps();
 	}
 
