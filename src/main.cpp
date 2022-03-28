@@ -15,11 +15,16 @@ int main(){
 	bool third = false;
 	// for (int numGen = 10; numGen <= 100; numGen*10)
 
-			NumberGenerator *testGen = new NumberGenerator(10);
+			NumberGenerator *testGen = new NumberGenerator(100);
 			MergeSort<int> *uMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *duMergeSort = new DataAnalyzer(uMergeSort);
 			MergeSort<int> *sMergeSort = new MergeSort<int>(testGen->getArray(), testGen->getSize());
 			DataAnalyzer *dsMergeSort = new DataAnalyzer(sMergeSort);
+			delete testGen;
+			delete uMergeSort;
+			delete duMergeSort;
+			delete sMergeSort;
+			delete dsMergeSort;
 
 // 1000
 if (first)

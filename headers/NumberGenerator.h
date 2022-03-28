@@ -19,6 +19,6 @@ public:
 	int changeSeed();
 	int changeSeed(int newSeed);
 	~NumberGenerator(){
-		// delete[] arr;
+		delete[] arr;
 	}
 };
