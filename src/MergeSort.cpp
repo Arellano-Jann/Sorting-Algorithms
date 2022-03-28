@@ -51,13 +51,23 @@ void MergeSort<T>::mergeArray(int left, int middle, int right){
 
 	// only empties out one of the sides.
 	while(l <= middle){ // empties out left side
-		finalArray[r] = arr[l];
+		
+		std::cout << "l: " << l;
+		std::cout << " middle: " << middle;
+		std::cout << " r: " << r << " ";
+		std::cout << finalArray[r] << " " << arr[l] << std::endl;
+
+		// finalArray[r] = arr[l];
 		// SortingAlgorithms<T>::incrementSwaps();
 		l++;
 		r++;
 	}
 	while(m <= right){ // empties out right side
-		finalArray[r] = arr[m];
+		std::cout << "m: " << m;
+		std::cout << " right: " << right;
+		std::cout << " r: " << r << " ";
+		std::cout << finalArray[r] << " " << arr[m] << std::endl;
+		// finalArray[r] = arr[m];
 		// SortingAlgorithms<T>::incrementSwaps();
 		m++;
 		r++;

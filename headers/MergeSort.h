@@ -1,6 +1,8 @@
 #pragma once
 #define MERGESORT_H
 
+#include <iostream>	
+
 template <typename T>
 class MergeSort : public SortingAlgorithms<T>{
 private:
